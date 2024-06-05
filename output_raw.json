@@ -1,0 +1,853 @@
+{
+    "current_url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis.html/pag-11",
+    "estates": [
+        {
+            "ad_type": "estate",
+            "id": 41445,
+            "agency": {
+                "id": "tuha2"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/villa/grand-tunis/ariana/41445.html",
+            "discount": null,
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178468,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41445/images/178468/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41445/images/178468/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41445/images/178468/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41445/images/178468/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41445/images/178468/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41445/images/178468/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "163 m²",
+            "previous_price": null,
+            "price": "340 000 DT",
+            "price_alternative": null,
+            "rooms_short": null,
+            "rooms": null,
+            "subtitle": "Ariana - Pôle Technologique",
+            "title": "Villa jumelée en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 37414,
+            "agency": {
+                "id": "tuch3"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/villa/grand-tunis/mutuelleville/37414.html",
+            "discount": "140 000 DT",
+            "discount_percentage": "9%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 176369,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuch3/estates/37414/images/176369/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuch3/estates/37414/images/176369/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuch3/estates/37414/images/176369/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuch3/estates/37414/images/176369/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuch3/estates/37414/images/176369/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuch3/estates/37414/images/176369/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": true,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "585 m²",
+            "previous_price": "1 600 000 DT",
+            "price": "1 460 000 DT",
+            "price_alternative": null,
+            "rooms_short": null,
+            "rooms": null,
+            "subtitle": "Mutuelleville",
+            "title": "Villa individuelle en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 38348,
+            "agency": {
+                "id": "tuha8"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/ariana/38348.html",
+            "discount": "35 000 DT",
+            "discount_percentage": "11%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 163436,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/38348/images/163436/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/38348/images/163436/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/38348/images/163436/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/38348/images/163436/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/38348/images/163436/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/38348/images/163436/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": true,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "184 m²",
+            "previous_price": "325 000 DT",
+            "price": "290 000 DT",
+            "price_alternative": null,
+            "rooms_short": null,
+            "rooms": null,
+            "subtitle": "Ariana, Rue de La Communication - Cité El Ghazala",
+            "title": "Duplex en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 41406,
+            "agency": {
+                "id": "tuha4"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/la-soukra/41406.html",
+            "discount": null,
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178545,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha4/estates/41406/images/178545/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha4/estates/41406/images/178545/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha4/estates/41406/images/178545/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha4/estates/41406/images/178545/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha4/estates/41406/images/178545/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha4/estates/41406/images/178545/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "131 m²",
+            "previous_price": null,
+            "price": "395 000 DT",
+            "price_alternative": null,
+            "rooms_short": "4 pièces",
+            "rooms": "4 pièces",
+            "subtitle": "La Soukra - Soukra",
+            "title": "S+3 en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 33883,
+            "agency": {
+                "id": "arcb2"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/el-menzah/33883.html",
+            "discount": "15 000 DT",
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 127622,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/arcb2/estates/33883/images/127622/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/arcb2/estates/33883/images/127622/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/arcb2/estates/33883/images/127622/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/arcb2/estates/33883/images/127622/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/arcb2/estates/33883/images/127622/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/arcb2/estates/33883/images/127622/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "169 m²",
+            "previous_price": "345 000 DT",
+            "price": "330 000 DT",
+            "price_alternative": null,
+            "rooms_short": "4 pièces",
+            "rooms": "4 pièces",
+            "subtitle": "El Menzah - Menzah 9",
+            "title": "S+3 en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 41275,
+            "agency": {
+                "id": "tuha2"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/terrain/grand-tunis/ariana/41275.html",
+            "discount": null,
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178046,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41275/images/178046/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41275/images/178046/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41275/images/178046/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41275/images/178046/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41275/images/178046/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41275/images/178046/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "550 m²",
+            "previous_price": null,
+            "price": "195 000 DT",
+            "price_alternative": null,
+            "rooms_short": null,
+            "rooms": null,
+            "subtitle": "Ariana - Pôle Technologique",
+            "title": "Terrain habitation ind. en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 40650,
+            "agency": {
+                "id": "tuha2"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/terrain/grand-tunis/ariana/40650.html",
+            "discount": null,
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178169,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40650/images/178169/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40650/images/178169/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40650/images/178169/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40650/images/178169/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40650/images/178169/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40650/images/178169/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "400 m²",
+            "previous_price": null,
+            "price": "380 000 DT",
+            "price_alternative": null,
+            "rooms_short": null,
+            "rooms": null,
+            "subtitle": "Ariana - Riadh Landalous",
+            "title": "Terrain habitation ind. en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 41287,
+            "agency": {
+                "id": "tuha2"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/terrain/grand-tunis/ariana/41287.html",
+            "discount": null,
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178045,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41287/images/178045/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41287/images/178045/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41287/images/178045/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41287/images/178045/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41287/images/178045/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41287/images/178045/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "428 m²",
+            "previous_price": null,
+            "price": "325 000 DT",
+            "price_alternative": null,
+            "rooms_short": null,
+            "rooms": null,
+            "subtitle": "Ariana - Cité El Ghazala",
+            "title": "Terrain habitation ind. en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 41167,
+            "agency": {
+                "id": "tuha2"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/ariana/41167.html",
+            "discount": "-119 880 DT",
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178461,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41167/images/178461/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41167/images/178461/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41167/images/178461/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41167/images/178461/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41167/images/178461/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/41167/images/178461/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "71 m²",
+            "previous_price": "120 DT",
+            "price": "120 000 DT",
+            "price_alternative": null,
+            "rooms_short": "3 pièces",
+            "rooms": "3 pièces",
+            "subtitle": "Ariana - Pôle Technologique",
+            "title": "S+2 en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 40271,
+            "agency": {
+                "id": "tuha2"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/villa/grand-tunis/ariana/40271.html",
+            "discount": null,
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178133,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40271/images/178133/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40271/images/178133/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40271/images/178133/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40271/images/178133/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40271/images/178133/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha2/estates/40271/images/178133/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "180 m²",
+            "previous_price": null,
+            "price": "400 000 DT",
+            "price_alternative": null,
+            "rooms_short": null,
+            "rooms": null,
+            "subtitle": "Ariana - Pôle Technologique",
+            "title": "Villa jumelée en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 17756,
+            "agency": {
+                "id": "tuhb4"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/jardins-de-carthage/17756.html",
+            "discount": "100 000 DT",
+            "discount_percentage": "9%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 162538,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/17756/images/162538/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/17756/images/162538/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/17756/images/162538/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/17756/images/162538/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/17756/images/162538/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/17756/images/162538/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": true,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "265 m²",
+            "previous_price": "1 200 000 DT",
+            "price": "1 100 000 DT",
+            "price_alternative": null,
+            "rooms_short": "5 pièces",
+            "rooms": "5 pièces",
+            "subtitle": "Jardins de Carthage - Les Jardins De Carthage",
+            "title": "S+4 en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 41267,
+            "agency": {
+                "id": "arca1"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/ennasr/41267.html",
+            "discount": null,
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178431,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41267/images/178431/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41267/images/178431/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41267/images/178431/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41267/images/178431/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41267/images/178431/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41267/images/178431/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "197 m²",
+            "previous_price": null,
+            "price": "600 000 DT",
+            "price_alternative": null,
+            "rooms_short": null,
+            "rooms": null,
+            "subtitle": "Ennasr - Ennasr 2",
+            "title": "Duplex en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 41388,
+            "agency": {
+                "id": "arca1"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/ennasr/41388.html",
+            "discount": null,
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178369,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41388/images/178369/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41388/images/178369/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41388/images/178369/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41388/images/178369/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41388/images/178369/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/arca1/estates/41388/images/178369/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "119 m²",
+            "previous_price": null,
+            "price": "330 000 DT",
+            "price_alternative": null,
+            "rooms_short": "3 pièces",
+            "rooms": "3 pièces",
+            "subtitle": "Ennasr - Ennasr 2",
+            "title": "S+3 en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 32162,
+            "agency": {
+                "id": "tuhb4"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/jardins-de-carthage/32162.html",
+            "discount": "-51 410 DT",
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178321,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/32162/images/178321/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/32162/images/178321/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/32162/images/178321/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/32162/images/178321/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/32162/images/178321/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuhb4/estates/32162/images/178321/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "126 m²",
+            "previous_price": "617 291 DT",
+            "price": "668 701 DT",
+            "price_alternative": null,
+            "rooms_short": "2 pièces",
+            "rooms": "2 pièces",
+            "subtitle": "Jardins de Carthage - Les Jardins De Carthage",
+            "title": "S+2 en vente",
+            "top": false,
+            "virtual_tour": null
+        },
+        {
+            "ad_type": "estate",
+            "id": 41381,
+            "agency": {
+                "id": "tuha8"
+            },
+            "bathrooms": null,
+            "best_offer": false,
+            "country": "tn",
+            "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/ariana/41381.html",
+            "discount": "-117 882 DT",
+            "discount_percentage": "%",
+            "exclusive": false,
+            "images": [
+                {
+                    "id": 178238,
+                    "order": 1,
+                    "url": {
+                        "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/41381/images/178238/gallery_preview.jpeg",
+                        "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/41381/images/178238/gallery_media.jpeg",
+                        "detail": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/41381/images/178238/detail.jpeg",
+                        "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/41381/images/178238/detail_preview.jpeg",
+                        "card": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/41381/images/178238/card.jpeg",
+                        "gallery": "https://cdn-media.medialabtc.it/tn/agencies/tuha8/estates/41381/images/178238/gallery.jpeg"
+                    }
+                }
+            ],
+            "is_discounted": false,
+            "is_hidden": null,
+            "is_saved": 0,
+            "surface": "70 m²",
+            "previous_price": "118 DT",
+            "price": "118 000 DT",
+            "price_alternative": null,
+            "rooms_short": "3 pièces",
+            "rooms": "3 pièces",
+            "subtitle": "Ariana, Avenue Doha - Cité El Ghazala",
+            "title": "S+2 en vente",
+            "top": false,
+            "virtual_tour": null
+        }
+    ],
+    "pagination": {
+        "current_page": 11,
+        "total_pages": 35,
+        "items_per_page": 15,
+        "total_items": 511,
+        "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis.html",
+        "pages_uri": {
+            "8": "/pag-8?region=ne",
+            "9": "/pag-9?region=ne",
+            "10": "/pag-10?region=ne",
+            "11": "/pag-11?region=ne",
+            "12": "/pag-12?region=ne",
+            "13": "/pag-13?region=ne",
+            "14": "/pag-14?region=ne"
+        },
+        "first_page_uri": "region=ne",
+        "last_page_uri": "/pag-35?region=ne"
+    },
+    "breadcrumb": [
+        {
+            "title": "Accueil",
+            "url": "https://www.tecnocasa.tn"
+        },
+        {
+            "title": "Bien en vente",
+            "url": "https://www.tecnocasa.tn/vendre-Bien/grand-tunis-region/municipalite.html"
+        },
+        {
+            "title": "Bien Grand Tunis"
+        }
+    ],
+    "cities": null,
+    "cities_list": [
+        {
+            "title": "Ain Zaghouan",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/ain-zaghouan.html"
+        },
+        {
+            "title": "Aouina",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/aouina.html"
+        },
+        {
+            "title": "Ariana",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/ariana.html"
+        },
+        {
+            "title": "Ben Arous",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/ben-arous.html"
+        },
+        {
+            "title": "Borj Cédria",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/borj-cedria.html"
+        },
+        {
+            "title": "Bou Mhel El-Bassatine",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/bou-mhel-el-bassatine.html"
+        },
+        {
+            "title": "Carthage",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/carthage.html"
+        },
+        {
+            "title": "Centre Urbain Nord",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/centre-urbain-nord.html"
+        },
+        {
+            "title": "Cité El Khadra",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/cite-el-khadra.html"
+        },
+        {
+            "title": "El Menzah",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/el-menzah.html"
+        },
+        {
+            "title": "El Mourouj",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/el-mourouj.html"
+        },
+        {
+            "title": "El Omrane",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/el-omrane.html"
+        },
+        {
+            "title": "Ennasr",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/ennasr.html"
+        },
+        {
+            "title": "Ettadhamen",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/ettadhamen.html"
+        },
+        {
+            "title": "Ezzahra",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/ezzahra.html"
+        },
+        {
+            "title": "Gammarth",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/gammarth.html"
+        },
+        {
+            "title": "Hammam Chott",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/hammam-chott.html"
+        },
+        {
+            "title": "Hammam Lif",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/hammam-lif.html"
+        },
+        {
+            "title": "Jardins d'El Menzah",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/jardins-d-el-menzah.html"
+        },
+        {
+            "title": "Jardins de Carthage",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/jardins-de-carthage.html"
+        },
+        {
+            "title": "La Goulette",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/la-goulette.html"
+        },
+        {
+            "title": "La Manouba",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/la-manouba.html"
+        },
+        {
+            "title": "La Marsa",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/la-marsa.html"
+        },
+        {
+            "title": "La Soukra",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/la-soukra.html"
+        },
+        {
+            "title": "Lafayette Centre Ville",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/lafayette-centre-ville.html"
+        },
+        {
+            "title": "Le Bardo",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/le-bardo.html"
+        },
+        {
+            "title": "Le Kram",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/le-kram.html"
+        },
+        {
+            "title": "Les Berges Du Lac",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/les-berges-du-lac.html"
+        },
+        {
+            "title": "Manar",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/manar.html"
+        },
+        {
+            "title": "Médina",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/medina.html"
+        },
+        {
+            "title": "Medina Jedida",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/medina-jedida.html"
+        },
+        {
+            "title": "Mégrine",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/megrine.html"
+        },
+        {
+            "title": "Mnihla",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/mnihla.html"
+        },
+        {
+            "title": "Montplaisir",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/montplaisir.html"
+        },
+        {
+            "title": "Mornag",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/mornag.html"
+        },
+        {
+            "title": "Mutuelleville",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/mutuelleville.html"
+        },
+        {
+            "title": "Radés",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/rades.html"
+        },
+        {
+            "title": "Raoued",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/raoued.html"
+        },
+        {
+            "title": "Sidi Bou Said",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/sidi-bou-said.html"
+        },
+        {
+            "title": "Sidi Thabet",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/sidi-thabet.html"
+        },
+        {
+            "title": "Zone Industrielles Nord",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/zone-industrielles-nord.html"
+        },
+        {
+            "title": "Zone Industrielles Sud",
+            "url": "https://www.tecnocasa.tn/vendre/immeubles/nord-est-ne/grand-tunis/zone-industrielles-sud.html"
+        }
+    ],
+    "districts": null,
+    "districts_list": null,
+    "quarters": null,
+    "quarters_list": null,
+    "geo": {
+        "city_latitude": null,
+        "city_longitude": null,
+        "country": "TN",
+        "province_id": "GT",
+        "province_slug": "grand-tunis",
+        "province_title": "Grand Tunis",
+        "region_code": "ne",
+        "region_slug": "nord-est-ne",
+        "region_title": "Nord-Est (NE)"
+    },
+    "contract": {
+        "id": "acquis",
+        "slug": "vendre",
+        "slug_seohub": "vendre",
+        "slug_estate": "vendre",
+        "title": "Vente"
+    },
+    "type": {
+        "id": "",
+        "title": "Bien",
+        "slug": "immeubles"
+    },
+    "filter_list": null,
+    "title": "Bien en Vente dans la zone de Grand Tunis",
+    "fallback": null,
+    "placeholder": "Grand Tunis (provincia)"
+}
