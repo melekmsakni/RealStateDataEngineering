@@ -1,0 +1,17 @@
+-  add field called region (sfax, kairaoun,....)
+-add field called rent or sell (contract: locazi or acquis)
+-add field resenditiel or  immobilier pro (sector: ind or res )
+-add field website (tecnoicasa tayara ..)
+- check the fileds name and make them understandble and think of them a s uniform schema 
+
+-i was thinking that each wesbite will have it topic in kafka 
+- have to ask gpt what is the best way to perform this 
+
+
+=> tayara scrpaer almost done after fixing the above things 
+
+
+- always think of slack telegram kubernetes and airflow and their future integration 
+- ask gpt to give you a descriptive text about you architucture so that we can use it when gpt4 is no longer available 
+-using gpt get an idea how i should use spark/python and other composent 
+-uderstand more kafka topics and spark and cassandra and how they work individually and all toghther to achieve my usecase 

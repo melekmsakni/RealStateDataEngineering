@@ -25,10 +25,19 @@ headers = {
     "x-requested-with": "XMLHttpRequest",
     "x-xsrf-token": "eyJpdiI6Ijl3Nms0VzNwcVlYS3NCdHhCTEZzY0E9PSIsInZhbHVlIjoiYS84c2p5TXkwUkhXaS9ZOEtqN3JaTHNDZVFVTnc1VDV2NzdoWEF0OGEzbjdzb05QUUNVUml3M2xJcFJac1hrRnMxbElrS0pHRjllUTQzdGZkY1p5cVZKY1pOMkV2c09jbFI2R0FZSEpIZ0hDNFh0WGNqTHNRekNwa2JGRjkzZkkiLCJtYWMiOiI2MzNhMjk5NWFiM2RiMWNjNTgyZDQ1YjgyNmMyYmMyMDdjNjhhMDFhNDgyYWI0YWZkMWM4ZWQxNmZlYzM3NWI3IiwidGFnIjoiIn0=",
 }
+regions_code = {
+    "Cap Bon": "NB",
+    "Grand Tunis": "GT",
+    "Kairouan": "KA",
+    "Mahdia": "MH",
+    "Monastir": "MS",
+    "Sfax": "SF",
+    "Sousse": "SS"
+}
 
-region_code = "GT"
-Property_Category="acquis"
-
+region_code = regions_code["Grand Tunis"]
+Property_Category="acquis"  #or "locazi"
+property_type='res' #or 'ind'
 
 def preProcess_and_send_to_kafka(data, producer,i=0):
     keys_to_keep = [
@@ -76,7 +85,7 @@ def getting_total_number_of_pages():
     try:
         conn.request(
             "GET",
-            f"/api/estates/search?contract={Property_Category}&province={region_code}&sector=res&type=&page=0&section=estate",
+            f"/api/estates/search?contract={Property_Category}&province={region_code}&sector={property_type}&type=&page=0&section=estate",
             headers=headers,
         )
         response = conn.getresponse()
@@ -110,7 +119,7 @@ def send_request_tecnocasa(region_code, page_number=0):
     try:
         conn.request(
             "GET",
-            f"/api/estates/search?contract={Property_Category}&province={region_code}&sector=res&type=&page={page_number}&section=estate",
+            f"/api/estates/search?contract={Property_Category}&province={region_code}&sector={property_type}&type=&page={page_number}&section=estate",
             headers=headers,
         )
         response = conn.getresponse()
@@ -152,6 +161,6 @@ def tecnocasa_data(producer):
         time.sleep(3)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     producer = KafkaProducer(bootstrap_servers=["localhost:9092"], max_block_ms=5000)
     tecnocasa_data(producer)
