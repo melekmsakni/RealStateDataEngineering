@@ -13,5 +13,5 @@
 
 - always think of slack telegram kubernetes and airflow and their future integration 
 - ask gpt to give you a descriptive text about you architucture so that we can use it when gpt4 is no longer available 
--using gpt get an idea how i should use spark/python and other composent 
+-using gpt get an idea how i should use spark/python and other composent ()
 -uderstand more kafka topics and spark and cassandra and how they work individually and all toghther to achieve my usecase 
