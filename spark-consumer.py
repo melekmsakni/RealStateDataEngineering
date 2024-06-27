@@ -92,6 +92,7 @@ def main():
         ]
     )
     # getting data from kafka
+   
     kafka_df = (
         kafka_df.selectExpr("CAST(value AS STRING) as value")
         .select(from_json(col("value"), schema).alias("data"))

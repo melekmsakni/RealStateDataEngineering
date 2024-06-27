@@ -1,0 +1,164 @@
+tayara api : 
+{
+    "id": "66630e7da84e412333a3df9d",
+    "title": "Un S+2 Haut Standing à Les Jardins de Carthage ",
+    "images": [
+        "https://cdn.tayara.tn/c3/c351581f-11ec-4b0e-bfcb-5d8f9c11336a",
+        "https://cdn.tayara.tn/0e/0e820096-0fc3-4c03-ba93-350370eb13f5",
+        "https://cdn.tayara.tn/6d/6dbd1e71-6d77-451f-bef4-5c492cff9d91",
+        "https://cdn.tayara.tn/1e/1e36f2ae-82eb-4544-8d89-b3cca9c88f24",
+        "https://cdn.tayara.tn/35/35937002-c5fc-4a8a-86f0-b719b86496bb",
+        "https://cdn.tayara.tn/a4/a47e96d8-73c6-4a61-a79e-b18a545290c7",
+        "https://cdn.tayara.tn/a4/a418b76b-9982-4a0c-b240-be1e01bedfd4",
+        "https://cdn.tayara.tn/e3/e3f39be0-2504-4236-958c-a23d7b2ed70a",
+        "https://cdn.tayara.tn/77/7701725a-c375-43de-8c8a-e47b4048260a",
+        "https://cdn.tayara.tn/7e/7edfcb21-c95f-4682-903e-d0d3d596f4ee"
+    ],
+    "imgLoad": "",
+    "description": "En Exclusivité \n#Maison de Luxe vous propose la #Location d'un Superbe Appartement S+2 de haut standing ,  situé au 2éme étage dans une résidence calme , gardée et dotée d'un bon voisinage à #Jardins de Carthage.\nL'appartement se compose comme suit :\n✔️Un salon donnant sur un balcon .\n✔️Une Salle d'eau invité .\n✔️Une cuisine agencée et équipée d'une plaque, hotte et four avec séchoir.\n✔️Deux chambres à coucher avec dont une avec dressing.\n✔️Une salle de bain commune .\nIl dispose également du chauffage central ☀️ 3 climatiseurs ❄ et d'une place de parking au sous sol 🚗.\n👉Pour plus d'informations, veuillez contacter :\n 27 700 500  / 22 222 333 \n💵 Prix : 1350 Dinars / mois .\n📢 Pour plus d'offres, consultez notre page facebook :https://www.facebook.com/maisondeluxetn",
+    "price": 1350,
+    "phone": "",
+    "location": {
+        "delegation": "Jardins De Carthage",
+        "governorate": "Tunis"
+    },
+    "metadata": {
+        "publishedOn": "2024-06-20T11:25:04.000Z",
+        "isModified": true,
+        "subCategory": "60be84bd50ab95b45b08a09c",
+        "isFeatured": false,
+        "publisher": {
+            "isApproved": false,
+            "name": "STE Maison de Luxe",
+            "isShop": true,
+            "avatar": "https://www.tayara.tn/mediaGateway/resize-image?img=db/dbfd24cb-3691-4fef-ac0f-339c8df4990d&w=100"
+        },
+        "producttype": 0
+    }
+}
+tecnocasa api :
+{
+    "ad_type": "estate",
+    "id": 40747,
+    "agency": {
+        "id": "arcb1"
+    },
+    "bathrooms": null,
+    "best_offer": false,
+    "country": "tn",
+    "detail_url": "https://www.tecnocasa.tn/vendre/appartement/grand-tunis/el-menzah/40747.html",
+    "discount": null,
+    "discount_percentage": "%",
+    "exclusive": false,
+    "images": [
+        {
+            "id": 175340,
+            "order": 1,
+            "url": {
+                "gallery_preview": "https://cdn-media.medialabtc.it/tn/agencies/arcb1/estates/40747/images/175340/gallery_preview.jpeg",
+                "gallery_media": "https://cdn-media.medialabtc.it/tn/agencies/arcb1/estates/40747/images/175340/gallery_media.jpeg",
+                "detail": "https://cdn-media.medialabtc.it/tn/agencies/arcb1/estates/40747/images/175340/detail.jpeg",
+                "detail_preview": "https://cdn-media.medialabtc.it/tn/agencies/arcb1/estates/40747/images/175340/detail_preview.jpeg",
+                "card": "https://cdn-media.medialabtc.it/tn/agencies/arcb1/estates/40747/images/175340/card.jpeg",
+                "gallery": "https://cdn-media.medialabtc.it/tn/agencies/arcb1/estates/40747/images/175340/gallery.jpeg"
+            }
+        }
+    ],
+    "is_discounted": false,
+    "is_hidden": null,
+    "is_saved": 0,
+    "surface": "225 m²",
+    "previous_price": null,
+    "price": "550 000 DT",
+    "price_alternative": null,
+    "rooms_short": "2 pièces",
+    "rooms": "2 pièces",
+    "subtitle": "El Menzah - Menzah 6",
+    "title": "S+4 en vente",
+    "top": false,
+    "virtual_tour": null
+}
+
+menzili data : using web scraping filtering by categorie 
+{
+category 
+type
+price
+title
+location
+rooms
+surface
+links
+images
+date depot
+}
+
+
+
+mandatory for tayara : {
+ 
+    title 
+    category 
+    contact number 
+    location 
+    decription 
+}
+
+non mandatory for tayara in case of category teerain or autre but mandatory for the other  {
+    type
+    surface
+    bathrooms
+    rooms
+    price
+    images
+    
+}
+
+mandaory for manzili {
+type
+title
+category 
+location
+description
+
+}
+non mandatory for manzili {
+surface
+bathroom
+bedrooms
+rooms
+constructon year
+price
+images
+
+}
+
+mandatory fiels for tecnocasa :{
+    title 
+    location 
+    type 
+    category
+
+}
+
+non mandatory field for tecnocasa : {
+price 
+rooms
+images
+}
+
+
+
+
+
+
+
+
+mandatory field {
+    id
+    title
+    source
+    location
+    type
+    category
+}
