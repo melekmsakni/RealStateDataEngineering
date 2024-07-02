@@ -13,7 +13,7 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 # stagger_delay = random.uniform(1, 3)
-stagger_delay = 3
+stagger_delay = 0.5
 semaphore = threading.Semaphore(1)
 
 conn = http.client.HTTPSConnection("www.tecnocasa.tn")
@@ -42,6 +42,49 @@ regions_code = {
     "Sfax": "SF",
     "Sousse": "SS",
 }
+custom_region_mapping = {
+    "ain-zaghouan": "tunis",
+    "aouina": "tunis",
+    "ariana": "ariana",
+    "ben-arous": "ben arous",
+    "borj-cedria": "ben arous",
+    "bou-mhel-el-bassatine": "ben arous",
+    "carthage": "tunis",
+    "centre-urbain-nord": "tunis",
+    "cite-el-khadra": "tunis",
+    "el-menzah": "tunis",
+    "el-mourouj": "ben arous",
+    "el-omrane": "tunis",
+    "ennasr": "ariana",
+    "ezzahra": "ben arous",
+    "gammarth": "tunis",
+    "hammam-lif": "ben arous",
+    "jardins-d-el-menzah": "tunis",
+    "jardins-de-carthage": "tunis",
+    "la-goulette": "tunis",
+    "la-manouba": "manouba",
+    "la-marsa": "tunis",
+    "la-soukra": "ariana",
+    "lafayette-centre-ville": "tunis",
+    "le-bardo": "tunis",
+    "le-kram": "tunis",
+    "les-berges-du-lac": "tunis",
+    "manar": "tunis",
+    "medina-jedida": "ben arous",
+    "megrine": "ben arous",
+    "mnihla": "ariana",
+    "mornag": "ben arous",
+    "mutuelleville": "tunis",
+    "rades": "ben arous",
+    "raoued": "ariana",
+    "sidi-bou-said": "tunis",
+    "sidi-thabet": "ariana",
+    "zone-industrielles-nord": "tunis",
+    "zone-industrielles-sud": "tunis",
+    "hammamet":"nabeul",
+    "nabeul":"nabeul"
+}
+
 
 # for ech region we have 4 possibilities :
 #     rg acquis  Res
@@ -102,7 +145,7 @@ def preprocess_tecnocasa(data):
             if num is None or num == "null":
                 return None
 
-            # Remove non-numeric characters (except for the decimal point)
+
             num = "".join(
                 char for char in num if char.isdigit() or char == "."
             )
@@ -124,31 +167,34 @@ def preprocess_tecnocasa(data):
             return surface
 
         def extract_details_from_url(url):
-            # Split the URL by '/'
-            parts = url.split("/")
+            try:
+                # Split the URL by '/'
+                parts = url.split("/")
 
-            # Extract the relevant parts
-            category = parts[3]
-            type_ = parts[4]
-            region = parts[5]
-            city = parts[6]
+                # Extract the relevant parts
+                category = parts[3]
+                type_ = parts[4]
+                region = parts[5]
+                city = parts[6]
 
-            return category, type_, region, city
+                return category, type_, region, city
+            except Exception as e :
+                logging.error(f'error while extracting data from url :{e}')
+                return None 
+        
+        def get_specific_region (city):
+            return  custom_region_mapping.get(city)
+            
 
         property_category, property_type, region, city = extract_details_from_url(
             data.get("detail_url")
         )
-        surface_str = data.get("surface")
-        rooms_str = data.get("rooms")
-        price_str = data.get("price")
 
-        surface= extract_surface(surface_str)
-        rooms =extract_digit(rooms_str)
-        price =extract_digit(price_str)
+        if region=="grand-tunis" or region=="cap-bon" :
+            region=get_specific_region(city)
 
-        # surface = extract_surface(surface_str) if surface_str else 0.0
-        # rooms = int(extract_digit(rooms_str)) if rooms_str else 0
-        # price = extract_digit(price_str) if price_str else 0.0
+
+
 
        
         tecnocasa_payload = {
@@ -160,9 +206,9 @@ def preprocess_tecnocasa(data):
             "source": "tecnocasa",
             "link": data.get("detail_url"),
             "type": property_type,
-            "surface": surface,
-            "rooms": rooms,
-            "price": price,
+            "surface": extract_surface(data.get("surface")),
+            "rooms": extract_digit(data.get("rooms")),
+            "price": extract_digit(data.get("price")),
             "images": list(data.get("images")[0]["url"].values()),
             "timestamp": datetime.now().isoformat(),
             "source_specific_data": {
@@ -183,7 +229,7 @@ def preprocess_tecnocasa(data):
         return tecnocasa_payload
 
     except Exception as e:
-        logging.error(f"niveauuu preprocessing fn : {e}")
+        logging.error(f"erooor in  preprocessing fn : {e}")
         return None
 
 
