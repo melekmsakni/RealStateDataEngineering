@@ -17,9 +17,9 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     healthcheck:
       test: [ 'CMD', 'bash', '-c', "echo 'ruok' | nc localhost 2181" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      interval: 20s
+      timeout: 10s
+      retries: 10
     networks: 
       - datamasterylab
 
@@ -54,9 +54,10 @@ services:
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
     healthcheck:
       test: ["CMD", "bash", "-c", 'nc -z localhost 9092' ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    entrypoint: ["sh", "-c", "sleep 30 && /etc/confluent/docker/run"]
     networks:
       - datamasterylab
 

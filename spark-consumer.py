@@ -15,9 +15,23 @@ from datetime import datetime
 
 
 
-def process_row(row, session):
+def insert_cassandra(row):
+    session = cassandra_session() 
+
+    source_specific_data = row["source_specific_data"] if row["source_specific_data"] is not None else {}
+    images = row["images"] if row["images"] is not None else []
+
+    id= row["id"] if row["id"] is not  None else "gggg"
+        
+
+    # Convert None values to "null" string to avoid cassandra null problem in list/map
+    for key, value in source_specific_data.items():
+        if value is None:
+            source_specific_data[key] = "null"
+
     base_data = {
-        "property_id": row["id"],
+        "property_id": id,
+        "link":row["link"],
         "source": row["source"],
         "title": row["title"],
         "category": row["category"],
@@ -27,18 +41,19 @@ def process_row(row, session):
         "surface": row["surface"],
         "rooms": row["rooms"],
         "price": row["price"],
-        "images": row["images"],
+        "images": images,
         "timestamp": row["timestamp"],
     }
 
     extended_data = {
-        "property_id": row["id"],
+        "property_id": id,
         "source": row["source"],
-        "source_specific_data": row["source_specific_data"],
+        "source_specific_data": source_specific_data,
     }
 
     insert_base_data(session, base_data)
     insert_extended_data(session, extended_data)
+    logging.info("row inserted succefully")
 
 
 def cassandra_session():
@@ -63,8 +78,9 @@ def cassandra_session():
         city TEXT,
         type TEXT,
         surface DECIMAL,
-        rooms INT,
+        rooms DECIMAL,
         price DECIMAL,
+        link TEXT,
         images LIST<TEXT>,
         timestamp TIMESTAMP
     );
@@ -86,10 +102,10 @@ def cassandra_session():
 def insert_base_data(session, row):
     query = """
     INSERT INTO real_estate_base (
-        property_id, source, title, category, region,city, type, surface, rooms, price, images, timestamp
+        property_id, source, title, category, region,city, type, surface, rooms, price, images, timestamp,link
     )
     VALUES (
-        %(property_id)s, %(source)s, %(title)s, %(category)s, %(region)s,%(city)s, %(type)s, %(surface)s, %(rooms)s, %(price)s, %(images)s, %(timestamp)s
+        %(property_id)s, %(source)s, %(title)s, %(category)s, %(region)s,%(city)s, %(type)s, %(surface)s, %(rooms)s, %(price)s, %(images)s, %(timestamp)s,%(link)s
     )
     """
     session.execute(query, row)
@@ -115,15 +131,15 @@ def main():
         .config("spark.cassandra.connection.host", "localhost")
         .config(
             "spark.jars.packages",
-            "com.datastax.spark:spark-cassandra-connector_2.13:3.5.0,"
-            "org.apache.spark:spark-sql_2.13:3.5.0",
+            "com.datastax.spark:spark-cassandra-connector_2.13:3.4.1,"
+            "org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.1",
         )
         .getOrCreate()
     )
     # define the listener
     kafka_df = (
         spark.readStream.format("kafka")
-        .option("kafka.bootstrap.servers", "localhost:9092")
+        .option("kafka.bootstrap.servers", "kafka-broker:29092")
         .option("subscribe", "tecnocasa_topic")
         .option("startingOffsets", "earliest")
         .load()
@@ -140,7 +156,7 @@ def main():
             StructField("link", StringType(), True),
             StructField("type", StringType(), True),
             StructField("surface", DecimalType(), True),
-            StructField("rooms", IntegerType(), True),
+            StructField("rooms", DecimalType(), True),
             StructField("price", DecimalType(), True),
             StructField("images", ArrayType(StringType()), True),
             StructField("timestamp", StringType(), True),
@@ -157,11 +173,11 @@ def main():
         .select("data.*")
     )
 
-    session = cassandra_session()
+    
     # writing data to casansdra in microbashs
     query = kafka_df.writeStream.foreachBatch(
         lambda batch_df, batch_id: batch_df.foreach(
-            lambda row: process_row(row, session)
+            lambda row: insert_cassandra(row)
         )
     ).start()
     query.awaitTermination()
