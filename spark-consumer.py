@@ -12,6 +12,8 @@ from pyspark.sql.types import (
 )
 from pyspark.sql.functions import col, from_json
 from datetime import datetime
+from cassandra.policies import DCAwareRoundRobinPolicy
+
 
 
 
@@ -57,7 +59,7 @@ def insert_cassandra(row):
 
 
 def cassandra_session():
-    cluster = Cluster(["cassandra"])
+    cluster = Cluster(["cassandra"],protocol_version=5,load_balancing_policy=DCAwareRoundRobinPolicy())
     session = cluster.connect()
     # creating keyspace
 
@@ -136,6 +138,10 @@ def main():
         )
         .getOrCreate()
     )
+
+
+
+
     # define the listener
     kafka_df = (
         spark.readStream.format("kafka")
