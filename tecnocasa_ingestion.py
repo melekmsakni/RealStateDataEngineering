@@ -18,6 +18,10 @@ semaphore = threading.Semaphore(1)
 
 conn = http.client.HTTPSConnection("www.tecnocasa.tn")
 
+kafka_topic="tecnocasa_topic_aut"
+
+
+
 headers = {
     "accept": "application/json, text/plain, */*",
     "accept-language": "en,fr-FR;q=0.9,fr;q=0.8,en-US;q=0.7,ar;q=0.6",
@@ -252,7 +256,7 @@ def preprocess_and_send_to_kafka(data_list, producer):
 
         try:
             processed_data = preprocess_tecnocasa(data)
-            send_to_kafka("tecnocasa_topic", processed_data, producer)
+            send_to_kafka(kafka_topic, processed_data, producer)
         except Exception as e:
             logging.error(f"Error in preprocessing or sending data: {e}")
 

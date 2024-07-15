@@ -1,7 +1,7 @@
 x-spark-common: &spark-common
   image: bitnami/spark:3.5.0
   volumes:
-    - ./jobs:/opt/bitnami/spark/jobs
+    - ./spark-jobs:/opt/bitnami/spark/jobs
   networks:
     - datamasterylab
 

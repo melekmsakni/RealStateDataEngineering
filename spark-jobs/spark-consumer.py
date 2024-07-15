@@ -14,8 +14,8 @@ from pyspark.sql.functions import col, from_json
 from datetime import datetime
 from cassandra.policies import DCAwareRoundRobinPolicy
 
-
-
+kafka_topic='tecnocasa_topic_aut'
+keyspace_name='real_estate_aut'
 
 def insert_cassandra(row):
     session = cassandra_session() 
@@ -62,11 +62,11 @@ def cassandra_session():
     cluster = Cluster(["cassandra"],protocol_version=5,load_balancing_policy=DCAwareRoundRobinPolicy())
     session = cluster.connect()
     # creating keyspace
-
+    
     session.execute(
-        "CREATE KEYSPACE IF NOT EXISTS real_estate WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};"
+        f"CREATE KEYSPACE IF NOT EXISTS {keyspace_name} WITH replication = {{'class': 'SimpleStrategy', 'replication_factor': '1'}};"
     )
-    session.set_keyspace("real_estate")
+    session.set_keyspace(keyspace_name)
     # creating tables
 
     session.execute(
@@ -146,7 +146,7 @@ def main():
     kafka_df = (
         spark.readStream.format("kafka")
         .option("kafka.bootstrap.servers", "kafka-broker:29092")
-        .option("subscribe", "tecnocasa_topic")
+        .option("subscribe", kafka_topic)
         .option("startingOffsets", "earliest")
         .load()
     )
