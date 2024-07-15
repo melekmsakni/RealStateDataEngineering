@@ -1,18 +1,14 @@
-# Dockerfile.main-spark
-
 
 FROM bitnami/spark:3.5.0
 
+# RUN mkdir -p /opt/bitnami/spark/jjddddddbs
 
-WORKDIR /opt/bitnami/spark/jobs
+WORKDIR /opt/bitnami/spark
 
-
+# RUN chmod -R 755 /opt/bitnami/spark/jobs
 COPY requirements.txt .
-USER root
-RUN chmod +x requirements.txt
-
 
 RUN pip install -r requirements.txt
 
 
-USER 1001
+
