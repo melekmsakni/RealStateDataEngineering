@@ -1,0 +1,15 @@
+
+FROM bitnami/spark:3.5.0
+
+
+
+WORKDIR /opt/bitnami/spark
+
+COPY requirements.txt .
+COPY spark-jobs/spark-consumer.py .
+
+
+RUN pip install -r requirements.txt
+
+
+

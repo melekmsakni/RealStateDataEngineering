@@ -7,6 +7,6 @@ py_env/
 
 
 # Ignore pytest cache directory
-jobs/
+
 
 .pytest_cache/
