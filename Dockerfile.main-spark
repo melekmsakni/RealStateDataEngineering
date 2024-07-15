@@ -1,11 +1,10 @@
 
 FROM bitnami/spark:3.5.0
 
-# RUN mkdir -p /opt/bitnami/spark/jjddddddbs
+
 
 WORKDIR /opt/bitnami/spark
 
-# RUN chmod -R 755 /opt/bitnami/spark/jobs
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt
