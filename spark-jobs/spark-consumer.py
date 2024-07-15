@@ -14,8 +14,10 @@ from pyspark.sql.functions import col, from_json
 from datetime import datetime
 from cassandra.policies import DCAwareRoundRobinPolicy
 
-kafka_topic='tecnocasa_topic_aut'
-keyspace_name='real_estate_aut'
+
+testing='aut'
+kafka_topic=f'tecnocasa_topic_{testing}'
+keyspace_name=f'real_estate_{testing}'
 
 def insert_cassandra(row):
     session = cassandra_session() 
