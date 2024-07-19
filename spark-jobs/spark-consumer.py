@@ -15,9 +15,9 @@ from datetime import datetime
 from cassandra.policies import DCAwareRoundRobinPolicy
 
 
-testing='aut'
-kafka_topic=f'tecnocasa_topic_{testing}'
-keyspace_name=f'real_estate_{testing}'
+
+kafka_topic='tecnocasa_topic'
+
 
 def insert_cassandra(row):
     session = cassandra_session() 
@@ -66,9 +66,9 @@ def cassandra_session():
     # creating keyspace
     
     session.execute(
-        f"CREATE KEYSPACE IF NOT EXISTS {keyspace_name} WITH replication = {{'class': 'SimpleStrategy', 'replication_factor': '1'}};"
+        "CREATE KEYSPACE IF NOT EXISTS real_estate WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};"
     )
-    session.set_keyspace(keyspace_name)
+    session.set_keyspace('real_estate')
     # creating tables
 
     session.execute(
