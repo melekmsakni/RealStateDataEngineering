@@ -8,5 +8,6 @@ py_env/
 
 # Ignore pytest cache directory
 
-
+logs/
+.env 
 .pytest_cache/
