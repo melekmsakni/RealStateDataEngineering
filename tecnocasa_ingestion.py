@@ -18,9 +18,9 @@ semaphore = threading.Semaphore(1)
 
 conn = http.client.HTTPSConnection("www.tecnocasa.tn")
 
-testing='aut'
+testing='_aut'
 
-kafka_topic=f"tecnocasa_topic_{testing}"
+kafka_topic=f"tecnocasa_topic"
 
 
 
