@@ -1,7 +1,7 @@
 x-spark-common: &spark-common
   build:
     context: .
-    dockerfile: Dockerfile.main-spark
+    dockerfile: Dockerfile.spark
   volumes:
     - ./spark-jobs:/opt/bitnami/spark/jobs
   networks:
