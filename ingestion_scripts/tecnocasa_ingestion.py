@@ -21,7 +21,7 @@ conn = http.client.HTTPSConnection("www.tecnocasa.tn")
 # testing='_aut'
 
 KAFKA_TOPIC=f"tecnocasa_topic"
-KAFKA_SERVER="localhost:9092"
+KAFKA_SERVER="kafka-broker:29092"
 
 
 headers = {
@@ -423,7 +423,8 @@ def tecnocasa_get_region_data(region_code, property_category, property_type, pro
             time.sleep(stagger_delay)
 
 
-def tecnocasa_all_data(producer):
+def tecnocasa_all_data():
+    producer = KafkaProducer(bootstrap_servers=[KAFKA_SERVER], max_block_ms=5000)
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=4
     ) as executor:  # Limit the number of parallel threads
@@ -448,6 +449,4 @@ def tecnocasa_all_data(producer):
                     print(f"Error occurred: {e}")
 
 
-if __name__ == "__main__":
-    producer = KafkaProducer(bootstrap_servers=[KAFKA_SERVER], max_block_ms=5000)
-    tecnocasa_all_data(producer)
+
