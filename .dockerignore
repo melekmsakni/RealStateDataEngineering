@@ -1,0 +1,7 @@
+.git
+logs
+README.md
+sample_response
+py_env
+__pycache__
+.pytest_cache
