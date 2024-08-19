@@ -1,10 +1,14 @@
 FROM apache/airflow:2.9.3-python3.10
 
-# Install additional Python packages
-# add --no-cache-dir if there is problem 
+USER root
+RUN apt-get update && \
+    apt-get install -y gcc python3-dev openjdk-17-jdk && \
+    apt-get clean
+
+# Set JAVA_HOME environment variable
+ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-arm64
+
+USER airflow
 
 COPY requirements.txt .
-RUN pip install --default-timeout=1000  -r requirements.txt
-
-# Copy DAG files
-
+RUN pip install --default-timeout=1000 -r requirements.txt
