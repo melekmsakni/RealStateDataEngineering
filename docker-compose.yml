@@ -44,6 +44,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ./ingestion_scripts:/opt/airflow/dags/ingestion_scripts
+    - ./jobs:/opt/airflow/jobs
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -52,7 +53,8 @@ x-airflow-common:
     postgres:
       condition: service_healthy
 
-
+  networks:
+    - datamasterylab
 
 
 services:

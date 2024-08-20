@@ -113,7 +113,7 @@ pycparser==2.22
 pyee==11.1.0
 Pygments==2.18.0
 PyJWT==2.9.0
-pyspark==3.5.1
+pyspark==3.5.0
 pytest==8.2.1
 pytest-base-url==2.1.0
 pytest-playwright==0.5.0

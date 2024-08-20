@@ -24,12 +24,21 @@ dag = DAG(
 )
 
 # Define the SparkSubmitOperator
+# spark_submit_task = SparkSubmitOperator(
+#     task_id='spark_submit_task',
+#     conn_id='spark_container',  # The connection ID you created for Spark
+#     application='/opt/airflow/jobs/spark-consumer.py',  # Path to your Spark job script
+#     packages='com.datastax.spark:spark-cassandra-connector_2.13:3.4.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.1',  # Additional packages
+#     dag=dag,
+#     name='arrow-spark',
+#     deploy_mode='client',  # Change from 'cluster' to 'client'
+# )
 spark_submit_task = SparkSubmitOperator(
     task_id='spark_submit_task',
     conn_id='spark_container',  # The connection ID you created for Spark
-    application='/opt/bitnami/spark/jobs/spark-consumer.py',  # Path to your Spark job script
-    packages='com.datastax.spark:spark-cassandra-connector_2.13:3.4.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.1',  # Additional packages
+    application='/opt/airflow/jobs/wordcountjob.py',  # Path to your Spark job script
     dag=dag,
+ # Change from 'cluster' to 'client'
 )
 
 

@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 from airflow import DAG
-from ingestion_scripts.tecnocasa_ingestion import tecnocasa_all_data
 from airflow.operators.python import PythonOperator, BranchPythonOperator
 from airflow.operators.email import EmailOperator
+from ingestion_scripts.tecnocasa_ingestion import tecnocasa_all_data
 
 
 # Define default_args for your DAG
