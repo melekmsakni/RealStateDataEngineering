@@ -15,4 +15,4 @@ py_env/
 
 # ingonring the logs and .env 
 logs/
-
+diagrame/
