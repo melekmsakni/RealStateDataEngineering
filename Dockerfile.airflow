@@ -9,11 +9,7 @@ RUN apt-get update && \
 ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
 RUN echo "JAVA_HOME is set to: $JAVA_HOME" 
 
-# Copy the setup script into the container
-COPY setup_airflow_connections.sh /docker-entrypoint-init.d/
 
-# Make the script executable
-RUN chmod +x /docker-entrypoint-init.d/setup_airflow_connections.sh
 
 USER airflow
 
