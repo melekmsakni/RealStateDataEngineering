@@ -4,7 +4,7 @@ __pycache__/
 
 # Ignore virtual environment directory
 py_env/
-
+venv_p/
 
 # Ignore pytest cache directory
 
