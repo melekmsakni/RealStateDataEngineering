@@ -5,7 +5,10 @@ from airflow.operators.email import EmailOperator
 from ingestion_scripts.tecnocasa_ingestion import tecnocasa_all_data
 
 
+current_time = datetime.now()
 
+# Calculate the start date (e.g., current date minus 1 day)
+start_date = current_time - timedelta(days=1)
 
 # Define default_args for your DAG
 default_args = {
@@ -18,8 +21,8 @@ default_args = {
 }
 with DAG(
     "data_ingestion_dag",
-    start_date=datetime(2024, 8, 14),
-    schedule_interval="@daily",
+    start_date=start_date,
+    schedule_interval="@hourly",
     description="A DAG for monitoring real-time data ingestion and processing",
     default_args=default_args,
     catchup=False,
