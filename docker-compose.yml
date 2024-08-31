@@ -62,6 +62,7 @@ services:
 
 # airflow related services 
   postgres:
+    container_name: postgres
     image: postgres:13
     environment:
       POSTGRES_USER: airflow
@@ -81,6 +82,7 @@ services:
   redis:
     # Redis is limited to 7.2-bookworm due to licencing change
     # https://redis.io/blog/redis-adopts-dual-source-available-licensing/
+    container_name: redis
     image: redis:7.2-bookworm
     expose:
       - 6379
@@ -97,6 +99,7 @@ services:
 
   airflow-webserver:
     <<: *airflow-common
+    container_name: airflow-webserver
     command: webserver
     ports:
       - "8080:8080"
@@ -116,6 +119,7 @@ services:
 
   airflow-scheduler:
     <<: *airflow-common
+    container_name: airflow-scheduler
     command: scheduler
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
@@ -133,6 +137,7 @@ services:
 
   airflow-worker:
     <<: *airflow-common
+    container_name: airflow-worker
     command: celery worker
     healthcheck:
       # yamllint disable rule:line-length
@@ -158,6 +163,7 @@ services:
 
   airflow-triggerer:
     <<: *airflow-common
+    container_name: airflow-triggerer
     command: triggerer
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
@@ -175,6 +181,7 @@ services:
 
   airflow-init:
     <<: *airflow-common
+    container_name: airflow-init
     entrypoint: /bin/bash
     # yamllint disable rule:line-length
     command:
@@ -357,7 +364,8 @@ services:
       - datamasterylab
 
   spark-master:
-    <<: *spark-common 
+    <<: *spark-common
+    container_name: spark-master
     command: bin/spark-class org.apache.spark.deploy.master.Master
     ports:
       - "9090:8080"
@@ -365,6 +373,7 @@ services:
 
   spark-worker: &spark-worker-image
     <<: *spark-common
+    container_name: spark-worker
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     depends_on:
       - spark-master
@@ -376,12 +385,15 @@ services:
 
   spark-worker-2:
     <<: *spark-worker-image
+    container_name: spark-worker-2
 
   spark-worker-3:
     <<: *spark-worker-image
+    container_name: spark-worker-3
 
   spark-worker-4:
     <<: *spark-worker-image
+    container_name: spark-worker-4
 
   cassandra_db:
     image: cassandra:latest
@@ -397,6 +409,15 @@ services:
     networks:
       - datamasterylab
 
+  presto:
+    container_name: presto
+    build:
+      context: .
+      dockerfile: Dockerfile.presto
+    ports:
+      - "5000:5000"
+    networks:
+      - datamasterylab
 
 volumes:
   postgres-db-volume:

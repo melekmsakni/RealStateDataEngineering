@@ -1,0 +1,11 @@
+# Use the Presto base image
+FROM prestodb/presto:latest
+
+# Copy the configuration files into the container
+COPY ./presto_config_files/config.properties /opt/presto-server/etc/config.properties
+COPY ./presto_config_files/jvm.config /opt/presto-server/etc/jvm.config
+
+# Expose the port on which Presto will run
+
+# Start Presto server
+CMD ["launcher", "start"]
