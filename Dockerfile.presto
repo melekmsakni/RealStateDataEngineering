@@ -5,7 +5,14 @@ FROM prestodb/presto:latest
 COPY ./presto_config_files/config.properties /opt/presto-server/etc/config.properties
 COPY ./presto_config_files/jvm.config /opt/presto-server/etc/jvm.config
 
-# Expose the port on which Presto will run
+# adding cassandra connector 
+RUN mkdir -p /opt/presto-server/etc/catalog
+COPY ./presto_config_files/cassandra.properties /opt/presto-server/etc/catalog/cassandra.properties
+
+
 
 # Start Presto server
 CMD ["launcher", "start"]
+
+
+

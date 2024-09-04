@@ -430,6 +430,8 @@ services:
         - ADMIN_PASSWORD=admin
       ports:
         - '8088:8088'
+      networks:
+        - datamasterylab
 
 volumes:
   postgres-db-volume:
