@@ -411,6 +411,7 @@ services:
 
   presto:
     container_name: presto
+    hostname: presto
     build:
       context: .
       dockerfile: Dockerfile.presto
