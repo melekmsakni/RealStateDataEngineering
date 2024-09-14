@@ -283,10 +283,10 @@ services:
       - datamasterylab
 ####
 
-  zk:
+  zoo-keeper:
     image: confluentinc/cp-zookeeper:7.5.0
-    hostname: zk
-    container_name: zk
+    hostname: zoo-keeper
+    container_name: zoo-keeper
     ports:
       - "2181:2181"
     environment:
@@ -305,14 +305,14 @@ services:
     hostname: kafka-broker
     container_name: kafka-broker
     depends_on:
-      zk:
+      zoo-keeper:
         condition: service_healthy
     ports:
       - "9092:9092"
       - "9101:9101"
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: 'zk:2181'
+      KAFKA_ZOOKEEPER_CONNECT: 'zoo-keeper:2181'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker:29092,PLAINTEXT_HOST://localhost:9092
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
@@ -335,6 +335,25 @@ services:
       timeout: 10s
       retries: 10
     entrypoint: ["sh", "-c", "sleep 30 && /etc/confluent/docker/run"]
+    networks:
+      - datamasterylab
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:7.5.0
+    hostname: schema-registry
+    container_name: schema-registry
+    depends_on:
+      zoo-keeper:
+        condition: service_healthy
+    ports:
+      - "8081:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zoo-keeper:2181'
+      SCHEMA_REGISTRY_LISTENERS: http://schema-registry:8081
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka-broker:29092,PLAINTEXT_HOST://localhost:9092
+      SCHEMA_REGISTRY_DEBUG: 'true'
+    restart: always
     networks:
       - datamasterylab
 
