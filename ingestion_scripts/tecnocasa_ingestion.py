@@ -20,8 +20,8 @@ conn = http.client.HTTPSConnection("www.tecnocasa.tn")
 
 # testing='_aut'
 
-KAFKA_TOPIC=f"tecnocasa_topic"
-KAFKA_SERVER="kafka-broker:29092"
+KAFKA_TOPIC = f"tecnocasa_topic"
+KAFKA_SERVER = "kafka-broker:29092"
 
 
 headers = {
@@ -87,8 +87,8 @@ custom_region_mapping = {
     "sidi-thabet": "ariana",
     "zone-industrielles-nord": "tunis",
     "zone-industrielles-sud": "tunis",
-    "hammamet":"nabeul",
-    "nabeul":"nabeul"
+    "hammamet": "nabeul",
+    "nabeul": "nabeul",
 }
 
 
@@ -151,10 +151,7 @@ def preprocess_tecnocasa(data):
             if num is None or num == "null":
                 return None
 
-
-            num = "".join(
-                char for char in num if char.isdigit() or char == "."
-            )
+            num = "".join(char for char in num if char.isdigit() or char == ".")
             # Convert to float
             if not num:
                 return None
@@ -184,25 +181,20 @@ def preprocess_tecnocasa(data):
                 city = parts[6]
 
                 return category, type_, region, city
-            except Exception as e :
-                logging.error(f'error while extracting data from url :{e}')
-                return None 
-        
-        def get_specific_region (city):
-            return  custom_region_mapping.get(city)
-            
+            except Exception as e:
+                logging.error(f"error while extracting data from url :{e}")
+                return None
+
+        def get_specific_region(city):
+            return custom_region_mapping.get(city)
 
         property_category, property_type, region, city = extract_details_from_url(
             data.get("detail_url")
         )
 
-        if region=="grand-tunis" or region=="cap-bon" :
-            region=get_specific_region(city)
+        if region == "grand-tunis" or region == "cap-bon":
+            region = get_specific_region(city)
 
-
-
-
-       
         tecnocasa_payload = {
             "id": str(data.get("id")),
             "title": data.get("title"),
@@ -447,6 +439,3 @@ def tecnocasa_all_data():
                     result = future.result()  # Get the result of each future
                 except Exception as e:
                     print(f"Error occurred: {e}")
-
-
-

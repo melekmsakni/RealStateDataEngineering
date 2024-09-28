@@ -1,0 +1,69 @@
+{
+  "type": "record",
+  "name": "RealStateObject",
+  "fields": [
+    {
+      "name": "bathrooms",
+      "type": ["int", "null"]
+    },
+    {
+      "name": "category",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "delegation",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "description",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "governorate",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "id",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "images",
+      "type": {
+        "type": "array",
+        "items": ["string", "null"]
+      }
+    },
+    {
+      "name": "isShop",
+      "type": ["boolean", "null"]
+    },
+    {
+      "name": "price",
+      "type": ["double", "null"]
+    },
+    {
+      "name": "publishedOn",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "publisher",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "rooms",
+      "type": ["int", "null"]
+    },
+    {
+      "name": "surface",
+      "type": ["double", "null"]
+    },
+    {
+      "name": "title",
+      "type": ["string", "null"]
+    },
+    {
+      "name": "type",
+      "type": ["string", "null"]
+    }
+  ]
+}

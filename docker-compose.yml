@@ -75,7 +75,7 @@ services:
       interval: 10s
       retries: 5
       start_period: 5s
-    restart: always
+    # restart: always
     networks:
       - datamasterylab
 
@@ -92,7 +92,7 @@ services:
       timeout: 30s
       retries: 50
       start_period: 30s
-    restart: always
+    # restart: always
     networks:
       - datamasterylab
 
@@ -109,7 +109,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    # restart: always
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -127,7 +127,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    # restart: always
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -153,7 +153,7 @@ services:
       # Required to handle warm shutdown of the celery workers properly
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"
-    restart: always
+    # restart: always
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -171,7 +171,7 @@ services:
       timeout: 30s
       retries: 10
       start_period: 60s
-    restart: always
+    # restart: always
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -274,7 +274,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    # restart: always
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -353,7 +353,7 @@ services:
       SCHEMA_REGISTRY_LISTENERS: http://schema-registry:8081
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka-broker:29092,PLAINTEXT_HOST://localhost:9092
       SCHEMA_REGISTRY_DEBUG: 'true'
-    restart: always
+    # restart: always
     networks:
       - datamasterylab
 

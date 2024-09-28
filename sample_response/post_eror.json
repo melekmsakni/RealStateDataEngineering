@@ -1,0 +1,80 @@
+{
+    "props": {
+        "pageProps": {
+            "_nextI18Next": {
+                "initialI18nStore": {
+                    "en": {
+                        "common": {
+                            "navbar.shops": "Shops",
+                            "listing.main-title": "Hello handsome user",
+                            "navbar.login": "Login",
+                            "navbar.login.short": "Login",
+                            "navbar.create-ad": "Create ad",
+                            "navbar.create-ad.short": "Create",
+                            "currency": "DT"
+                        }
+                    }
+                },
+                "initialLocale": "en",
+                "userConfig": {
+                    "i18n": {
+                        "defaultLocale": "en",
+                        "locales": [
+                            "fr",
+                            "ar",
+                            "ar-TN",
+                            "en"
+                        ]
+                    },
+                    "react": {
+                        "useSuspense": true
+                    },
+                    "default": {
+                        "i18n": {
+                            "defaultLocale": "en",
+                            "locales": [
+                                "fr",
+                                "ar",
+                                "ar-TN",
+                                "en"
+                            ]
+                        },
+                        "react": {
+                            "useSuspense": true
+                        }
+                    }
+                }
+            },
+            "adDeleted": 5
+        },
+        "__N_SSP": true
+    },
+    "page": "/item/[[...slug]]",
+    "query": {
+        "slug": [
+            "66eb1947b3c14db342d1ca70"
+        ]
+    },
+    "buildId": "I6Bvcuw5Cw4xapNXTdQ9Y",
+    "isFallback": false,
+    "gssp": true,
+    "locale": "en",
+    "locales": [
+        "en",
+        "fr",
+        "ar",
+        "ar-TN"
+    ],
+    "defaultLocale": "en",
+    "scriptLoader": [
+        {
+            "src": "https://www.googletagmanager.com/gtag/js?id=GTM-NZFDZCC",
+            "strategy": "afterInteractive"
+        },
+        {
+            "id": "google-analytics",
+            "strategy": "afterInteractive",
+            "children": "\n              window.dataLayer = window.dataLayer || [];\n              function gtag(){window.dataLayer.push(arguments);}\n              gtag('js', new Date());\n\n              gtag('config', 'GTM-NZFDZCC');\n            "
+        }
+    ]
+}

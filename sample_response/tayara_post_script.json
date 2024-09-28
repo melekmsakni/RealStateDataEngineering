@@ -1,0 +1,146 @@
+{
+    "props": {
+        "pageProps": {
+            "_nextI18Next": {
+                "initialI18nStore": {
+                    "en": {
+                        "common": {
+                            "navbar.shops": "Shops",
+                            "listing.main-title": "Hello handsome user",
+                            "navbar.login": "Login",
+                            "navbar.login.short": "Login",
+                            "navbar.create-ad": "Create ad",
+                            "navbar.create-ad.short": "Create",
+                            "currency": "DT"
+                        }
+                    }
+                },
+                "initialLocale": "en",
+                "userConfig": {
+                    "i18n": {
+                        "defaultLocale": "en",
+                        "locales": [
+                            "fr",
+                            "ar",
+                            "ar-TN",
+                            "en"
+                        ]
+                    },
+                    "react": {
+                        "useSuspense": true
+                    },
+                    "default": {
+                        "i18n": {
+                            "defaultLocale": "en",
+                            "locales": [
+                                "fr",
+                                "ar",
+                                "ar-TN",
+                                "en"
+                            ]
+                        },
+                        "react": {
+                            "useSuspense": true
+                        }
+                    }
+                }
+            },
+            "adDetails": {
+                "title": "Bureau à louer belevedere",
+                "description": "A louer bureau situé belevedere avenue des États Unis 3 chambres couloir toilette ",
+                "phone": "+21652653633",
+                "id": "66eb2959b3c14db342d1db99",
+                "price": 650,
+                "images": [
+                    "https://cdn.tayara.tn/e9/e9e7910d-bb15-4888-a678-6e07d62cec36",
+                    "https://cdn.tayara.tn/6f/6fcc5603-f65e-44ef-88be-bf2ed62e2d4d",
+                    "https://cdn.tayara.tn/18/18b6bac0-1ee7-42e6-9e98-64b8515a89c0",
+                    "https://cdn.tayara.tn/90/9061a118-8afc-4fb0-851e-de377dde6615",
+                    "https://cdn.tayara.tn/67/673100ee-4544-4a56-9fa5-216b90669ccc",
+                    "https://cdn.tayara.tn/21/2117ecc3-e6cc-47de-b0a5-fcd5a0f3874d"
+                ],
+                "location": {
+                    "coordinates": {},
+                    "delegation": "Centre Ville Lafayette",
+                    "governorate": "Tunis"
+                },
+                "category": "Immobilier",
+                "subCategoryId": "60be84be50ab95b45b08a09f",
+                "publishedOn": "2024-09-18T19:26:17.000Z",
+                "publisher": {
+                    "avatar": "",
+                    "id": "4504ff77-23c2-411c-bafe-a1ff830c71c9"
+                },
+                "adParams": [
+                    {
+                        "label": "Type de transaction",
+                        "value": "À Louer"
+                    },
+                    {
+                        "label": "Superficie",
+                        "value": "70"
+                    },
+                    {
+                        "label": "Salles de bains",
+                        "value": "1"
+                    },
+                    {
+                        "label": "Chambres",
+                        "value": "3"
+                    }
+                ],
+                "sold": false,
+                "deleted": false,
+                "state": 2
+            },
+            "adUserData": {
+                "avatar": "",
+                "address": "",
+                "email": "",
+                "fullname": "zied",
+                "isShop": false,
+                "enabled": true,
+                "kcid": "4504ff77-23c2-411c-bafe-a1ff830c71c9",
+                "favoritesList": [],
+                "phonenumber": "+21652877772",
+                "tokenbalance": 50,
+                "url": "",
+                "id": "60c4aba00f7bf679b4d71a9a",
+                "shopBackgroundIMage": "",
+                "description": "",
+                "categoryId": "",
+                "blacklist": []
+            },
+            "countAdByUser": 2
+        },
+        "__N_SSP": true
+    },
+    "page": "/item/[[...slug]]",
+    "query": {
+        "slug": [
+            "66eb2959b3c14db342d1db99"
+        ]
+    },
+    "buildId": "I6Bvcuw5Cw4xapNXTdQ9Y",
+    "isFallback": false,
+    "gssp": true,
+    "locale": "en",
+    "locales": [
+        "en",
+        "fr",
+        "ar",
+        "ar-TN"
+    ],
+    "defaultLocale": "en",
+    "scriptLoader": [
+        {
+            "src": "https://www.googletagmanager.com/gtag/js?id=GTM-NZFDZCC",
+            "strategy": "afterInteractive"
+        },
+        {
+            "id": "google-analytics",
+            "strategy": "afterInteractive",
+            "children": "\n              window.dataLayer = window.dataLayer || [];\n              function gtag(){window.dataLayer.push(arguments);}\n              gtag('js', new Date());\n\n              gtag('config', 'GTM-NZFDZCC');\n            "
+        }
+    ]
+}
