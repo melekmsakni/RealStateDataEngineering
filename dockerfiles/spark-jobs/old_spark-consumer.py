@@ -143,7 +143,6 @@ def main():
 
 
 
-
     # define the listener
     kafka_df = (
         spark.readStream.format("kafka")

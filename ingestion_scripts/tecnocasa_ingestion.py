@@ -7,22 +7,27 @@ import sys
 import logging
 import concurrent.futures
 import random
-import threading
 from datetime import datetime
+from confluent_kafka import SerializingProducer
+from confluent_kafka.schema_registry import SchemaRegistryClient
+from confluent_kafka.schema_registry.avro import AvroSerializer
+from confluent_kafka.schema_registry import Schema
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 # stagger_delay = random.uniform(1, 3)
 stagger_delay = 0.5
-semaphore = threading.Semaphore(1)
+
 
 conn = http.client.HTTPSConnection("www.tecnocasa.tn")
 
 # testing='_aut'
 
 KAFKA_TOPIC = f"tecnocasa_topic"
-KAFKA_SERVER = "kafka-broker:29092"
-
+# KAFKA_SERVER = "kafka-broker:29092"
+KAFKA_SERVER = "localhost:9092"
+SCHEMA_REGISTRY_SUBJECT = "RealState-schema"
+SCHEMA_REGISTRY_URL = "http://localhost:8081"
 
 headers = {
     "accept": "application/json, text/plain, */*",
@@ -140,6 +145,11 @@ def exponential_backoff_request(
                 logger.error(f"All {max_retries} attempts failed.")
                 return None
 
+def get_schema_from_schema_registry(schema_registry_url, schema_registry_subject):
+    sr = SchemaRegistryClient({"url": schema_registry_url})
+    latest_version = sr.get_latest_version(schema_registry_subject)
+
+    return sr, latest_version
 
 def preprocess_tecnocasa(data):
     try:
@@ -392,50 +402,55 @@ def send_request_tecnocasa(
 
 
 def tecnocasa_get_region_data(region_code, property_category, property_type, producer):
-    with semaphore:
-        number_of_pages = getting_total_number_of_pages(
-            region_code, property_category, property_type
+
+    number_of_pages = getting_total_number_of_pages(
+        region_code, property_category, property_type
+    )
+
+    if number_of_pages == None:
+        return None
+
+    for page in range(number_of_pages + 1):
+
+        data_list = send_request_tecnocasa(
+            region_code, property_category, property_type, page_number=page
         )
+        print(data_list)
+        exit()
 
-        if number_of_pages == None:
-            return None
-
-        for page in range(number_of_pages + 1):
-
-            data_list = send_request_tecnocasa(
-                region_code, property_category, property_type, page_number=page
+        if data_list != None and len(data_list) != 0:
+            logger.info(
+                f"{region_code, property_category, property_type}.... data fetched for page {page}..."
             )
+            preprocess_and_send_to_kafka(data_list, producer)
 
-            if data_list != None and len(data_list) != 0:
-                logger.info(
-                    f"{region_code, property_category, property_type}.... data fetched for page {page}..."
-                )
-                preprocess_and_send_to_kafka(data_list, producer)
-
-            time.sleep(stagger_delay)
+        time.sleep(stagger_delay)
 
 
 def tecnocasa_all_data():
-    producer = KafkaProducer(bootstrap_servers=[KAFKA_SERVER], max_block_ms=5000)
-    with concurrent.futures.ThreadPoolExecutor(
-        max_workers=4
-    ) as executor:  # Limit the number of parallel threads
-        futures = []
-        for region_code in regions_code.values():
-            logger.info(f"starting threads for region {region_code}")
-            for property_category, property_type in combinations:
-                futures.append(
-                    executor.submit(
-                        tecnocasa_get_region_data,
-                        region_code,
-                        property_category,
-                        property_type,
-                        producer,
-                    )
-                )
+    sr, latest_version = get_schema_from_schema_registry(
+        SCHEMA_REGISTRY_URL, SCHEMA_REGISTRY_SUBJECT
+    )
+    value_avro_serializer = AvroSerializer(
+        schema_registry_client=sr,
+        schema_str=latest_version.schema.schema_str,
+    )
 
-            for future in futures:
-                try:
-                    result = future.result()  # Get the result of each future
-                except Exception as e:
-                    print(f"Error occurred: {e}")
+    producer = SerializingProducer(
+        {
+            "bootstrap.servers": KAFKA_SERVER,
+            "security.protocol": "plaintext",
+            "value.serializer": value_avro_serializer,
+            "delivery.timeout.ms": 120000,  # set it to 2 mins
+            "enable.idempotence": "true",
+        }
+    )
+    
+
+    for region_code in list(regions_code.values())[:1]:
+        logger.info(f"starting threads for region {region_code}")
+        for property_category, property_type in combinations[:1]:
+            tecnocasa_get_region_data(region_code, property_category, property_type, producer)
+
+
+tecnocasa_all_data()

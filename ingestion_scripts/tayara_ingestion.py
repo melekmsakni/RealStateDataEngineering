@@ -10,35 +10,45 @@ from confluent_kafka.schema_registry.avro import AvroSerializer
 from confluent_kafka.schema_registry import Schema
 import requests
 from bs4 import BeautifulSoup
+import time 
 
-# Set up logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.ERROR,                      # Set the logging level
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',  # Log format
+    handlers=[
+        logging.FileHandler("tayara_ingesting.log"),      # Log to a file named 'app.log'
+        logging.StreamHandler()              # Optionally log to console as well
+    ]
+)
+
+
 logger = logging.getLogger(__name__)
 
 # Configuration
 KAFKA_TOPIC = "tayara_topic"
-KAFKA_SERVER = "localhost:9092"
+KAFKA_SERVER = "kafka-broker:29092"
 SCHEMA_REGISTRY_SUBJECT = "RealState-schema"
-SCHEMA_REGISTRY_URL = "http://localhost:8081"
+# SCHEMA_REGISTRY_URL = "http://localhost:8081"
+SCHEMA_REGISTRY_URL = "http://schema-registry:8081"
 
 
 url = "https://www.tayara.tn/api/marketplace/search-api/"
 
 headers = {
-    "accept": "application/json",
-    "accept-language": "en,fr-FR;q=0.9,fr;q=0.8,en-US;q=0.7,ar;q=0.6",
-    "content-type": "application/json",
-    "cookie": 'rl_page_init_referrer=RudderEncrypt%3AU2FsdGVkX18uZyFbSMQDoGuptOWRlEySJTZEympbxzM%3D; rl_page_init_referring_domain=RudderEncrypt%3AU2FsdGVkX1845Ob5K%2FFK5uHYDXA6%2BtDCNxF4Qa1JIu4%3D; _gcl_au=1.1.430962370.1726233850; rs_ga=GA1.1.887514326.1726233851; caravel-cookie="5e53e2227ef8cc3b"; _gid=GA1.2.633884130.1726233934; _ga=GA1.1.887514326.1726233851; _ga_0LMQZK4Q75=GS1.1.1726257232.3.1.1726258721.60.0.0; rl_session=RudderEncrypt%3AU2FsdGVkX19ewqLmlDRLtjVDGyJ3iwLGBianSFeRRes2bv6J9QwNFl502CMUnD%2FoxXpBfrH4AeYU%2BC4xnMZrcxJa%2BJAvwqH2VzMHVNE4ahJYcvMrOxJ2ai3%2FZysrvezVnSjeepCAm0kLgqOCJgkTsg%3D%3D; rl_user_id=RudderEncrypt%3AU2FsdGVkX19BHEyDaj0xPylDPLyETNzgcQrMAEjhUgc%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2FILIvWT8fVZAgJTTeCL1RoNq0y5eK%2F9EK%2FCxlQ0LiqaYyHa1rFhf5WwDS%2FBoIYmwpOhIaDRe7PJA%3D%3D; rl_group_id=RudderEncrypt%3AU2FsdGVkX19Vx3nBRAosNLHpQuc%2FJO6mm5OVe40SB1s%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX1%2B6oatwnagFQ65yglOH7B%2FF0hZ5F2DtobY%3D; rl_group_trait=RudderEncrypt%3AU2FsdGVkX19vh6QLSMeXVrJes%2B5wn%2Bx8kObCN3HQEyY%3D; rs_ga_93M2KYSFK9=GS1.1.1726257228.3.1.1726258722.58.0.0',
-    "origin": "https://www.tayara.tn",
-    "priority": "u=1, i",
-    "referer": "https://www.tayara.tn/ads/c/Immobilier/Maisons%20et%20Villas/?Type+de+transaction=%C3%80+Vendre&page=2",
-    "sec-ch-ua": '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": '"Linux"',
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+  'accept': 'application/json',
+  'accept-language': 'en,fr-FR;q=0.9,fr;q=0.8,en-US;q=0.7,ar;q=0.6',
+  'content-type': 'application/json',
+  'cookie': 'caravel-cookie="902a9009ddae8717"; caravel-cookie="97761743e959360e"; _gcl_au=1.1.1486801219.1727114978; load-heavy-content=true; rl_page_init_referrer=RudderEncrypt%3AU2FsdGVkX19mExdMXxw0rHQD%2BxnFft0YAHSlUTCztMllkwYcG%2BhuAXA2VwunqKIs; rl_page_init_referring_domain=RudderEncrypt%3AU2FsdGVkX1%2FF6oTwlXGSuyupLQRoSVw%2F5OZa4%2FDdpBoSCnXfc9tRUtZauWsWCnGD; rs_ga=GA1.1.1858177586.1727114984; caravel-cookie="902a9009ddae8717"; userid=3fca9a5c-0927-4be4-9753-8fde730d2d84; _ga_93M2KYSFK9=GS1.1.1727490387.9.0.1727490387.60.0.0; _ga=GA1.1.1858177586.1727114984; rl_user_id=RudderEncrypt%3AU2FsdGVkX1%2FRuufAU7DskfIDt6%2FbThceJd5yj6Ppw8VCWBeNMYhRW6XbuwyfiKXv9B2yWMggAKeZmcg7NxJX1A%3D%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2BmE2InvX5vrEEK8%2F%2FjRcLRW9PemlgiAWT6fCR3ue0UAQ1LaW%2BAN5A%2BrLkpJT%2BQKtvtytxxOBScKQ%3D%3D; rl_group_id=RudderEncrypt%3AU2FsdGVkX1%2Bw4WDjTish%2FkCKzKWqxh6G2lRmIkcVyrw%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX1%2BkfSrWRCtFrx4VNs%2FuxVp6tdy5JQwY2%2FT5odfiGxYuJRg4Ju964rcRcGTXRnsibcdEYuhSya9JD1mLhRlms7JNSWFpgFSrLb4%3D; rl_group_trait=RudderEncrypt%3AU2FsdGVkX19qqPxTz2AImTN5TveWo%2B%2FRu%2B%2FsM8aSuvo%3D; rl_session=RudderEncrypt%3AU2FsdGVkX1%2B1Z1h6l1bh5hIGT%2FMQ6MNabNVnbS84SK6L6Xenes0wsVHCHCZEU9nr4mTlryNpQtUqUMNjqeqcbWb92r0wYH5PXqlr7zrWj%2BIohwkWGqU5fBnzwgBTy8UHdyYpt%2Fwt3d9Ihg5a8q5X2g%3D%3D; _ga_0LMQZK4Q75=GS1.1.1728924692.22.1.1728924845.38.0.0; rs_ga_93M2KYSFK9=GS1.1.1728924692.29.1.1728924845.38.0.0',
+  'origin': 'https://www.tayara.tn',
+  'priority': 'u=1, i',
+  'referer': 'https://www.tayara.tn/ads/c/Immobilier/Appartements/?Type+de+transaction=%C3%80+Louer&page=1',
+  'sec-ch-ua': '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-platform': '"Linux"',
+  'sec-fetch-dest': 'empty',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-site': 'same-origin',
+  'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
 }
 
 
@@ -47,13 +57,13 @@ property_categories = {
     # 'À Vendre':'sale'
 }
 property_types = {
-    "60be84be50ab95b45b08a09f": "office",
+    # "60be84be50ab95b45b08a09f": "office",
     # '60be84bd50ab95b45b08a09d':'villa',
-    # '60be84bd50ab95b45b08a09c':'apartment',
+    '60be84bd50ab95b45b08a09c':'apartment',
     # '60be84be50ab95b45b08a0a0':'commercial',
     # '60be84be50ab95b45b08a0a1':'land',
 }
-
+KAFKA_TOPIC = "tayara_topic_apartment_louer"
 
 def delivery_report(errmsg, msg):
     if errmsg is not None:
@@ -96,11 +106,11 @@ def get_item_specific_data(item):
             # Extract the 'props' section from the JSON data
             props_data = json_data.get("props")
 
-            pageProps = props_data.get("pageProps", {})
+            pageProps = props_data.get("pageProps")
 
-            adDetails = pageProps.get("adDetails", [])
+            adDetails = pageProps.get("adDetails")
 
-            adParams = adDetails.get("adParams", [])
+            adParams = adDetails.get("adParams")
             for param in adParams:
 
                 label = param["label"]
@@ -116,10 +126,9 @@ def get_item_specific_data(item):
             return specific_data
 
         except Exception as e:
-            logger.error(f"error while parsing html data : {e}")
+            logger.error(f"{id_item} - error while parsing html data : {e}")
             return {}
 
-        # logger.info(json.dumps(props_data, indent=2))  # Print formatted JSON
 
     try:
         response = requests.request("GET", url, headers=headers, data=payload)
@@ -128,11 +137,11 @@ def get_item_specific_data(item):
             specific_data = get_data_html(response.text)
             return specific_data
         else:
-            logger.error(f"couldn't get response ")
+            logger.error(f"{id_item} - couldn't get response ")
             return {}
 
     except Exception as e:
-        logger.error(f"problem with api request : {e} ")
+        logger.error(f"{id_item} -  problem with api request : {e} ")
         return {}
 
 
@@ -165,27 +174,28 @@ def preprocess_data(item_data):
 def serilize_and_send_kafka(processed_data, producer):
 
     try:
-
+        
         producer.produce(
-            topic=KAFKA_TOPIC, value=processed_data , on_delivery=delivery_report
+            topic=KAFKA_TOPIC, value=processed_data , key=processed_data['id'] , on_delivery=delivery_report
         )
 
         # Trigger any available delivery report callbacks from previous produce() calls
         events_processed = producer.poll(1)
-        logger.info(f"events_processed: {events_processed}")
+        # logger.info(f"events_processed: {events_processed}")
 
         # Ensure messages are being sent in batches and check queue status
         messages_in_queue = producer.flush(1)
-        logger.info(f"messages_in_queue: {messages_in_queue}")
+        # logger.info(f"messages_in_queue: {messages_in_queue}")
 
     except Exception as e:
-        logger.info(f"Error producing message: {e}")
+        logger.error(f"{processed_data['id']} -  Error producing message: {e}")
 
 
 def preprocess_and_send_to_kafka(item_data, producer):
     processed_data = preprocess_data(item_data)
 
     serilize_and_send_kafka(processed_data, producer)
+    time.sleep(0.5)
 
 
 def tayara_get_data(property_type, property_category, producer):
@@ -216,20 +226,18 @@ def tayara_get_data(property_type, property_category, producer):
         response = requests.post(url, headers=headers, data=payload)
         if response.status_code != 200:
             logger.error(
-                f"Failed to get data from Tayara API. Status: {response.status_code}"
+                f"Failed to get data from Tayara API {property_type}, {property_category}. Status: {response.status_code}"
             )
             return None
 
         response_json = json.loads(response.text)
         data = response_json[0][0]
 
-        for item in data[:1]:
+        for item in data:
             item_data = (item, property_type, property_category)
 
             preprocess_and_send_to_kafka(item_data, producer)
-            logger.info("item sent to kafka ")
-
-        logger.info("Data successfully sent to Kafka")
+            
 
     except Exception as e:
         logger.error(
@@ -273,4 +281,7 @@ def tayara_all_data():
     producer.flush()
 
 
-tayara_all_data()
+# tayara_all_data()
+
+# adDeleted:5 => sold 
+# adDeleted:4 => deleted 

@@ -11,7 +11,7 @@ from fastavro.schema import load_schema
 
 
 
-avro_file = "/home/melek/RealStateDataEngineering/RealState_schema.avsc"
+avro_file = "./RealState_schema.avsc"
 schema_registry_url = "http://localhost:8081"
 schema_registry_subject = f"RealState-schema"
 
@@ -47,13 +47,13 @@ def update_schema(schema_registry_url, schema_registry_subject, schema_str):
     return schema_id
 
 
+if __name__ == "__main__":
+    SCHEMA_STR = avro_schema_to_string(avro_file)
 
-SCHEMA_STR = avro_schema_to_string(avro_file)
+    schema_id = register_schema(schema_registry_url, schema_registry_subject, SCHEMA_STR)
+    print(schema_id)
 
-schema_id = register_schema(schema_registry_url, schema_registry_subject, SCHEMA_STR)
-print(schema_id)
-
-sr, latest_version = get_schema_from_schema_registry(
-    schema_registry_url, schema_registry_subject
-)
-print(latest_version.schema.schema_str)
+    sr, latest_version = get_schema_from_schema_registry(
+        schema_registry_url, schema_registry_subject
+    )
+    print(latest_version.schema.schema_str)

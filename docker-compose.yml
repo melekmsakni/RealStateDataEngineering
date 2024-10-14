@@ -1,6 +1,6 @@
 x-spark-common: &spark-common
   build:
-    context: .
+    context: ./dockerfiles
     dockerfile: Dockerfile.spark
   volumes:
     - ./spark-jobs:/opt/bitnami/spark/jobs
@@ -15,7 +15,7 @@ x-airflow-common:
   
   # image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.9.3}
   build:
-    context: .
+    context: ./dockerfiles
     dockerfile: Dockerfile.airflow
   environment:
     &airflow-common-env
@@ -415,7 +415,7 @@ services:
     container_name: spark-worker-4
 
   cassandra_db:
-    image: cassandra:latest
+    image: cassandra:5.0.1
     container_name: cassandra
     hostname: cassandra
     ports:
@@ -432,7 +432,7 @@ services:
     container_name: presto
     hostname: presto
     build:
-      context: .
+      context: ./dockerfiles
       dockerfile: Dockerfile.presto
     ports:
       - "5000:5000"
@@ -441,7 +441,7 @@ services:
 
   superset:
       build:
-        context: .
+        context: ./dockerfiles
         dockerfile: Dockerfile.superset
       container_name: superset
       environment:
@@ -452,6 +452,24 @@ services:
         - '8088:8088'
       networks:
         - datamasterylab
+  
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9091:9090"
+    networks:
+      - datamasterylab
+
+  grafana:
+    image: grafana/grafana:main-ubuntu
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - datamasterylab
 
 volumes:
   postgres-db-volume:

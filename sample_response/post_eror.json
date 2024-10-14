@@ -1,3 +1,4 @@
+// sold post 410
 {
     "props": {
         "pageProps": {
@@ -58,6 +59,235 @@
     "buildId": "I6Bvcuw5Cw4xapNXTdQ9Y",
     "isFallback": false,
     "gssp": true,
+    "locale": "en",
+    "locales": [
+        "en",
+        "fr",
+        "ar",
+        "ar-TN"
+    ],
+    "defaultLocale": "en",
+    "scriptLoader": [
+        {
+            "src": "https://www.googletagmanager.com/gtag/js?id=GTM-NZFDZCC",
+            "strategy": "afterInteractive"
+        },
+        {
+            "id": "google-analytics",
+            "strategy": "afterInteractive",
+            "children": "\n              window.dataLayer = window.dataLayer || [];\n              function gtag(){window.dataLayer.push(arguments);}\n              gtag('js', new Date());\n\n              gtag('config', 'GTM-NZFDZCC');\n            "
+        }
+    ]
+}
+
+
+{
+    "props": {
+        "pageProps": {
+            "_nextI18Next": {
+                "initialI18nStore": {
+                    "en": {
+                        "common": {
+                            "navbar.shops": "Shops",
+                            "listing.main-title": "Hello handsome user",
+                            "navbar.login": "Login",
+                            "navbar.login.short": "Login",
+                            "navbar.create-ad": "Create ad",
+                            "navbar.create-ad.short": "Create",
+                            "currency": "DT"
+                        }
+                    }
+                },
+                "initialLocale": "en",
+                "userConfig": {
+                    "i18n": {
+                        "defaultLocale": "en",
+                        "locales": [
+                            "fr",
+                            "ar",
+                            "ar-TN",
+                            "en"
+                        ]
+                    },
+                    "react": {
+                        "useSuspense": true
+                    },
+                    "default": {
+                        "i18n": {
+                            "defaultLocale": "en",
+                            "locales": [
+                                "fr",
+                                "ar",
+                                "ar-TN",
+                                "en"
+                            ]
+                        },
+                        "react": {
+                            "useSuspense": true
+                        }
+                    }
+                }
+            },
+            "adDeleted": 5
+        },
+        "__N_SSP": true
+    },
+    "page": "/item/[[...slug]]",
+    "query": {
+        "slug": [
+            "66eb1920b3c14db342d1ca4d"
+        ]
+    },
+    "buildId": "DZg6a2T5HkBRPAbhwWa9Q",
+    "isFallback": false,
+    "gssp": true,
+    "locale": "en",
+    "locales": [
+        "en",
+        "fr",
+        "ar",
+        "ar-TN"
+    ],
+    "defaultLocale": "en",
+    "scriptLoader": [
+        {
+            "src": "https://www.googletagmanager.com/gtag/js?id=GTM-NZFDZCC",
+            "strategy": "afterInteractive"
+        },
+        {
+            "id": "google-analytics",
+            "strategy": "afterInteractive",
+            "children": "\n              window.dataLayer = window.dataLayer || [];\n              function gtag(){window.dataLayer.push(arguments);}\n              gtag('js', new Date());\n\n              gtag('config', 'GTM-NZFDZCC');\n            "
+        }
+    ]
+}
+// deleted post 410
+{
+    "props": {
+        "pageProps": {
+            "_nextI18Next": {
+                "initialI18nStore": {
+                    "en": {
+                        "common": {
+                            "navbar.shops": "Shops",
+                            "listing.main-title": "Hello handsome user",
+                            "navbar.login": "Login",
+                            "navbar.login.short": "Login",
+                            "navbar.create-ad": "Create ad",
+                            "navbar.create-ad.short": "Create",
+                            "currency": "DT"
+                        }
+                    }
+                },
+                "initialLocale": "en",
+                "userConfig": {
+                    "i18n": {
+                        "defaultLocale": "en",
+                        "locales": [
+                            "fr",
+                            "ar",
+                            "ar-TN",
+                            "en"
+                        ]
+                    },
+                    "react": {
+                        "useSuspense": true
+                    },
+                    "default": {
+                        "i18n": {
+                            "defaultLocale": "en",
+                            "locales": [
+                                "fr",
+                                "ar",
+                                "ar-TN",
+                                "en"
+                            ]
+                        },
+                        "react": {
+                            "useSuspense": true
+                        }
+                    }
+                }
+            },
+            "adDeleted": 4
+        },
+        "__N_SSP": true
+    },
+    "page": "/item/[[...slug]]",
+    "query": {
+        "slug": [
+            "6698fa4b5e9cc9cd76947adb"
+        ]
+    },
+    "buildId": "DZg6a2T5HkBRPAbhwWa9Q",
+    "isFallback": false,
+    "gssp": true,
+    "locale": "en",
+    "locales": [
+        "en",
+        "fr",
+        "ar",
+        "ar-TN"
+    ],
+    "defaultLocale": "en",
+    "scriptLoader": [
+        {
+            "src": "https://www.googletagmanager.com/gtag/js?id=GTM-NZFDZCC",
+            "strategy": "afterInteractive"
+        },
+        {
+            "id": "google-analytics",
+            "strategy": "afterInteractive",
+            "children": "\n              window.dataLayer = window.dataLayer || [];\n              function gtag(){window.dataLayer.push(arguments);}\n              gtag('js', new Date());\n\n              gtag('config', 'GTM-NZFDZCC');\n            "
+        }
+    ]
+}
+// 404 post 
+{
+    "props": {
+        "pageProps": {}
+    },
+    "page": "/404",
+    "query": {},
+    "buildId": "DZg6a2T5HkBRPAbhwWa9Q",
+    "nextExport": true,
+    "autoExport": true,
+    "isFallback": false,
+    "locale": "en",
+    "locales": [
+        "en",
+        "fr",
+        "ar",
+        "ar-TN"
+    ],
+    "defaultLocale": "en",
+    "scriptLoader": [
+        {
+            "src": "https://www.googletagmanager.com/gtag/js?id=GTM-NZFDZCC",
+            "strategy": "afterInteractive"
+        },
+        {
+            "id": "google-analytics",
+            "strategy": "afterInteractive",
+            "children": "\n              window.dataLayer = window.dataLayer || [];\n              function gtag(){window.dataLayer.push(arguments);}\n              gtag('js', new Date());\n\n              gtag('config', 'GTM-NZFDZCC');\n            "
+        }
+    ]
+}
+
+// 500 response nothing shown 
+
+{
+    "props": {
+        "pageProps": {
+            "statusCode": 500
+        }
+    },
+    "page": "/_error",
+    "query": {},
+    "buildId": "DZg6a2T5HkBRPAbhwWa9Q",
+    "nextExport": true,
+    "isFallback": false,
+    "gip": true,
     "locale": "en",
     "locales": [
         "en",

@@ -5,7 +5,7 @@ FROM bitnami/spark:3.5.0
 WORKDIR /opt/bitnami/spark
 
 COPY requirements.txt .
-COPY spark-jobs/spark-consumer.py .
+COPY spark-jobs .
 
 # add --no-cache-dir if there is problem 
 RUN pip install --default-timeout=1000  -r requirements.txt

@@ -112,7 +112,6 @@ platformdirs==4.2.2
 playwright==1.44.0
 pluggy==1.5.0
 prison==0.2.1
-prometheus_client==0.21.0
 protobuf==5.27.3
 psutil==6.0.0
 py4j==0.10.9.7

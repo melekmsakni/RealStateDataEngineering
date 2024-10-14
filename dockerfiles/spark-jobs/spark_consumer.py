@@ -17,9 +17,6 @@ schema_registry_url = "http://schema-registry:8081"
 kafka_producer_topic = "tayara_topic"
 schema_registry_subject = f"RealState-schema"
 
-
-
-kafka_producer_topic = "tayara_topic_apartment_louer"
 def get_schema_from_schema_registry(schema_registry_url, schema_registry_subject):
     sr = SchemaRegistryClient({'url': schema_registry_url})
     latest_version = sr.get_latest_version(schema_registry_subject)
@@ -33,14 +30,14 @@ def cassandra_session():
     # creating keyspace
     
     session.execute(
-        "CREATE KEYSPACE IF NOT EXISTS real_estate_data_two WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};"
+        "CREATE KEYSPACE IF NOT EXISTS real_estate_data_one WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};"
     )
-    session.set_keyspace('real_estate_data_two')
+    session.set_keyspace('real_estate_data_one')
     # creating tables
 
     session.execute(
         """
-        CREATE TABLE IF NOT EXISTS real_estate_data_two (
+        CREATE TABLE IF NOT EXISTS real_estate_data_one (
             id TEXT PRIMARY KEY,
             category TEXT,
             delegation TEXT,
@@ -68,7 +65,7 @@ def cassandra_session():
 
 def insert_base_data(session, row):
     query = """
-        INSERT INTO real_estate_data_two (
+        INSERT INTO real_estate_data_one (
             id, category, delegation, description, governorate, images, isShop, price, publishedOn, publisher, rooms, surface, title, type, bathrooms,
             price_per_square_meter, listing_age_days, num_images  -- New Columns Added
         )

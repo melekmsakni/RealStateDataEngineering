@@ -12,7 +12,7 @@ current_time = datetime.now()
 start_date = current_time - timedelta(days=1)
 
 
-
+TOPIC='tayara_topic'
 
 
 default_args = {
@@ -47,7 +47,7 @@ spark_cluster_sensor = SparkClusterSensor(
 
 check_or_create_topic = KafkaTopicCheckCreateOperator(
     task_id="check_or_create_kafka_topic",
-    topic_name="tecnocasa_topic",
+    topic_name=TOPIC,
 )
 
 
@@ -58,7 +58,7 @@ spark_submit_task = SparkSubmitOperator(
     task_id="spark_submit_task",
     conn_id="spark_container",  # The connection ID you created for Spark
     application="/opt/airflow/jobs/spark-consumer.py",  # Path to your Spark job script
-    packages="com.datastax.spark:spark-cassandra-connector_2.13:3.4.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.1",
+    packages="com.datastax.spark:spark-cassandra-connector_2.13:3.4.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.1,org.apache.spark:spark-avro_2.12:3.5.0",
     dag=dag,
 )
 

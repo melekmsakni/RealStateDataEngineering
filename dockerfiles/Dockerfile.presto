@@ -1,5 +1,5 @@
 # Use the Presto base image
-FROM prestodb/presto:latest
+FROM prestodb/presto:0.289
 
 # Copy the configuration files into the container
 COPY ./presto_config_files/config.properties /opt/presto-server/etc/config.properties

@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator, BranchPythonOperator
 from airflow.operators.email import EmailOperator
-from ingestion_scripts.tecnocasa_ingestion import tecnocasa_all_data
+from ingestion_scripts.tayara_ingestion import tayara_all_data
 
 
 current_time = datetime.now()
@@ -22,7 +22,7 @@ default_args = {
 with DAG(
     "data_ingestion_dag",
     start_date=start_date,
-    schedule_interval="@hourly",
+    schedule_interval="@once",
     description="A DAG for monitoring real-time data ingestion and processing",
     default_args=default_args,
     catchup=False,
@@ -30,8 +30,8 @@ with DAG(
 
     # Define tasks
     tecnocasa_ingestion = PythonOperator(
-        task_id="tecnocasa_ingestion",
-        python_callable=tecnocasa_all_data,
+        task_id="tayara_ingestion",
+        python_callable=tayara_all_data,
     )
 
     # send_email_notification = EmailOperator(
