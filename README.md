@@ -40,16 +40,11 @@ Dive into the dynamic world of Tunisian real estate analytics with our comprehen
 
 Here's a high-level overview of our pipeline architecture:
 
-```mermaid
-graph LR
-    A[Data Sources] -->|Ingest| B(Apache Kafka)
-    B -->|Stream| C(Apache Spark)
-    C -->|Process| D(Apache Cassandra)
-    D -->|Store| E(Apache Superset)
-    F(Apache Airflow) -->|Orchestrate| B & C & D & E
-```
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+
+
+![data_archi](https://github.com/user-attachments/assets/e53f4967-0ddc-4b4c-8913-c842d2dbdfa7)
 
 
 ## 🛠️ Prerequisites
