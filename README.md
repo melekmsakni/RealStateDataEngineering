@@ -1,6 +1,7 @@
 
 
-# 🏠 Tunisia Real Estate Data Pipeline
+
+# 🏠🇹🇳 Tunisia Real Estate Data Pipeline
 
 
 
@@ -18,11 +19,15 @@ Whether you're tracking property prices, monitoring market fluctuations, or iden
 [![Powered by Apache Spark](https://img.shields.io/badge/Powered%20by-Apache%20Spark-orange?style=flat-square&logo=apache-spark)](https://spark.apache.org/)
 [![Orchestrated with Apache Airflow](https://img.shields.io/badge/Orchestrated%20with-Apache%20Airflow-blue?style=flat-square&logo=apache-airflow)](https://airflow.apache.org/)
 [![Visualized with Apache Superset](https://img.shields.io/badge/Visualized%20with-Apache%20Superset-green?style=flat-square&logo=apache-superset)](https://superset.apache.org/)
+[![Azure Cloud Services](https://img.shields.io/badge/Cloud-Azure-blue?style=flat-square&logo=microsoft-azure)](https://azure.microsoft.com/)
+[![Stored in Apache Cassandra](https://img.shields.io/badge/Stored%20in-Apache%20Cassandra-1287B1?style=flat-square&logo=apache-cassandra)](https://cassandra.apache.org/)
+
 
 ## 📚 Table of Contents
 
 - [🌟 Introduction](#-introduction)
 - [🏗️ Architecture](#️-architecture)
+- [📊 Visualization Dashboard](#-visualization-dashboard)
 - [🛠️ Prerequisites](#️-prerequisites)
 - [🚀 Installation](#-installation)
 - [🔧 Project Setup](#-project-setup)
@@ -46,6 +51,11 @@ Here's a high-level overview of our pipeline architecture:
 
 ![data_archi](https://github.com/user-attachments/assets/e53f4967-0ddc-4b4c-8913-c842d2dbdfa7)
 
+## 📊 Visualization Dashboard
+
+Our interactive visualization dashboard, powered by Apache Superset, provides real-time insights into the Tunisian real estate market.
+
+![dashborad](https://github.com/user-attachments/assets/a8591ad4-f24a-491e-93b0-4c26e7c00ba6)
 
 ## 🛠️ Prerequisites
 
