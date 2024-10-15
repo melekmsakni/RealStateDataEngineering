@@ -17,3 +17,5 @@ env/
 # ingonring the logs and .env 
 logs/
 diagrame/
+
+sample_response/
