@@ -49,7 +49,8 @@ graph LR
     F(Apache Airflow) -->|Orchestrate| B & C & D & E
 ```
 
-[You can replace this text-based diagram with an actual image of your architecture diagram]
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
 
 ## 🛠️ Prerequisites
 
