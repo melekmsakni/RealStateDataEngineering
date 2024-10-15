@@ -8,7 +8,7 @@ Welcome to our cutting-edge Tunisian Real Estate Data Pipeline! This project sea
 Our pipeline is designed to:
 
 - Aggregate data from multiple Tunisian real estate sources
-- Process and analyze information in real-time
+- Process and analyze information in near real-time
 - Generate comprehensive insights into market trends
 - Provide interactive visualizations for intuitive data exploration
 
