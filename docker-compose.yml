@@ -60,7 +60,7 @@ x-airflow-common:
 
 services:
 
-# airflow related services 
+
   postgres:
     container_name: postgres
     image: postgres:13
@@ -281,7 +281,7 @@ services:
         condition: service_completed_successfully
     networks:
       - datamasterylab
-####
+
 
   zoo-keeper:
     image: confluentinc/cp-zookeeper:7.5.0
